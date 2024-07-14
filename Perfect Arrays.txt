@@ -1,0 +1,49 @@
+Given an array arr of size n and you have to tell whether the arr is perfect or not. An array is said to be perfect if its reverse array matches the original array. If the arr is perfect then return True else return False.
+
+Example 1:
+
+Input :
+n = 5
+arr = {1, 2, 3, 2, 1}
+Output : PERFECT
+Explanation:
+Here we can see we have [1, 2, 3, 2, 1] if we reverse it we can find [1, 2, 3, 2, 1]
+which is the same as before.So, the answer is PERFECT.
+
+Example 2:
+
+Input :
+n = 5
+arr = {1, 2, 3, 4, 5}
+Output : NOT PERFECT
+Explanation:
+Here we can see we have [1, 2, 3, 4, 5] if we reverse it we find [5, 4, 3, 2, 1]
+which is the not same as before.So, the answer is NOT PERFECT.
+
+User Task:
+The task is to complete the function IsPerfect(), which takes an array arr  of size n , and returns the boolean value true if it is Perfect else false. The driver will print itself "PERFECT" or "NOT PERFECT" accordingly.
+
+Expected Time Complexity: O(n).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 ≤ n ≤ 106
+1 ≤ arr[i] ≤ 109
+
+code in java:
+
+class Solution {
+    public static boolean isPerfect(int n, int[] arr) {
+        // code here
+        boolean flag=true;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]!=arr[n-i-1])
+            {
+                flag=false;
+            }
+        }
+        return flag;
+    }
+}
+        
